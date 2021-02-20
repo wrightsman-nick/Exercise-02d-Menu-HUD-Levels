@@ -1,13 +1,18 @@
-extends KinematicBody2D
+extends Node2D
+
+onready var Enemy = load("res://Enemy/Enemy2.tscn")
+
+onready var width = get_viewport().size.x
 
 onready var HUD = get_node("/root/Game/HUD")
 export var speed = Vector2(0,3)
 export var health = 100
 export var points = 10
 export var damage = 50
+export var prob = 0.8
 
 onready var Explosion = load("res://Explosion/Explosion.tscn")
-onready var Sound = get_node("/root/Game/Cow")
+onready var Sound = get_node("/root/Game/Narwhal")
 
 
 func _physics_process(delta):
